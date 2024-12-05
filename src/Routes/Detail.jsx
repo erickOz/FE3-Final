@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import "../Styles/index.css"
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
@@ -23,13 +24,14 @@ useEffect(() => {
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      <h2> {dentists.name}</h2>
-      <h2> {dentists.username}</h2>
-      <h2> {dentists.phone}</h2>
-      <h2> {dentists.website}</h2>
+    <div className='detail-container'> 
+      <h1>Detail Dentist {dentists.id} </h1>
+      <h2> Nombre: {dentists.name}</h2>
+      <h2> Apellido:{dentists.username}</h2>
+      <h2> Telefono:{dentists.phone}</h2>
+      <h2> Website: {dentists.website}</h2>
       
-
+      </div>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Styles/App.css"
+import "../Styles/index.css"
+
+
 import { useDentistState } from "../Context/GlobalContext";
 
 
