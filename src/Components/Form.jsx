@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Message from "./Message";
-import "../Styles/index.css"
+import "../Styles/form.css"
 
 const Form = () => {
   const [user, setUser] = useState({
@@ -35,7 +35,7 @@ const Form = () => {
     
     return (
       <> 
-      <div >
+      <div className="form-container">
         {show ? (
           <Message nombre= {user.nombre} />
         ): (

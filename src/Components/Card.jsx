@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Styles/index.css"
+import "../Styles/card.css"
 
 
 import { useDentistState } from "../Context/GlobalContext";
@@ -25,7 +25,7 @@ const Card = ({ dentist } ) => {
         <h3>{dentist.name}</h3>
         <p>{dentist.username}</p>
       </Link>
-        <button onClick={toggleFav}> {findFav ? "🌟" : "⭐"}</button>
+        <button className="favButton" onClick={toggleFav}> {findFav ? "🌟 Agregado a favorito" : "⭐"}</button>
     </div>
   );
 };
