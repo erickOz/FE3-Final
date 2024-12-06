@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Card from '../Components/Card'
-import axios from 'axios'
 import { useDentistState } from '../Context/GlobalContext'
 import "../Styles/index.css"
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const {dentists} = useDentistState()
+  const { state:
+    {dentists}} = useDentistState()
   
   return (
     <main className="main-container " >
@@ -16,7 +15,7 @@ const Home = () => {
         {dentists.map ((dentist) => 
         <Card key={dentist.id}  dentist={dentist}/>
       )}
-        {/* Aqui deberias renderizar las cards */}
+    
       </div>
     </main>
   )

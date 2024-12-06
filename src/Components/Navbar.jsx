@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../Styles/index.css"
-import { useThemeState } from '../Context/ThemeContext';
+import { useDentistState } from '../Context/GlobalContext';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Navbar = ({ toggleTheme, isDark }) => {
-  
+const Navbar = () => {
+  const { state, dispatch } = useDentistState(); 
 
+  const handleThemeToggle = () => {
+    dispatch({ type: "TOGGLE_THEME" }); 
+  };
   return (
     
     <nav>
-      {/* <img src="./images/.png" alt='DH-logo' /> */}
+
       <Link to="/">
         Home
       </Link>
@@ -21,10 +23,11 @@ const Navbar = ({ toggleTheme, isDark }) => {
       <Link to="/favs">
       Favs
       </Link>
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button onClick={toggleTheme} toggleTheme= {toggleTheme} isDark={isDark}>
-        {isDark ? "🌞 Light Mode" : "🌙 Dark Mode"}  </button>
+  
+      <button onClick={handleThemeToggle}>
+        {state.theme ? "🌙 Dark Mode" : "🌞 Light Mode"}
+        </button>
+
     </nav>
   )
 }

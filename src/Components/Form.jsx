@@ -9,8 +9,8 @@ const Form = () => {
   })
   const [error, setError] = useState(false)
   const [show, setShow] = useState(false)
-  // const navigate = useNavigate ()
-  
+
+
   const handleChange = (event) => {
     console.log(event.target.name, event.target.value);
     setUser({
@@ -27,7 +27,7 @@ const Form = () => {
     ) {
       setShow(true)
       setError(false)
-     // agregar navigate
+  
     } else {
       setError(true)
     }
@@ -35,9 +35,7 @@ const Form = () => {
     
     return (
       <> 
-      
       <div >
-        
         {show ? (
           <Message nombre= {user.nombre} />
         ): (
